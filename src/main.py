@@ -41,7 +41,9 @@ class CameraStream:
         chrome_options.add_argument("--disable-images")
 
         # Set up the WebDriver
-        service = Service(ChromeDriverManager().install())
+        # Download latest chromedriver after awhile to avoid issues
+        # service = Service(ChromeDriverManager().install())
+        service = Service(executable_path="/Users/dante/Playground/tanka_generator/chromedriver-mac-x64/chromedriver")
         driver = webdriver.Chrome(service=service, options=chrome_options)
         # Navigate to the tanka generator website
         driver.get(TANKA_GEN_URL)
